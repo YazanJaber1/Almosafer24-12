@@ -3,6 +3,7 @@ package AlmosaferWeb;
 import static org.testng.Assert.assertEquals;
 
 import java.time.Duration;
+import java.time.LocalDate;
 import java.util.Random;
 
 import org.openqa.selenium.By;
@@ -71,6 +72,27 @@ public class MyTestCases extends Parameter {
 		System.out.println();
 	}
 
+	@Test(priority = 6)
+	public void CheckDepartureDateAndReturnDate() {
+
+		LocalDate Today = LocalDate.now();
+
+		int expectedDepartureDate = Today.plusDays(1).getDayOfMonth();
+		int expectedReturnDate = Today.plusDays(2).getDayOfMonth();
+
+		int ActualDeparturedate = Integer.parseInt(driver
+				.findElement(By.cssSelector("div[class='sc-iHhHRJ sc-kqlzXE blwiEW'] span[class='sc-cPuPxo LiroG']"))
+				.getText());
+
+		int ActualReturn = Integer.parseInt(driver
+				.findElement(By.cssSelector("div[class='sc-iHhHRJ sc-OxbzP edzUwL'] span[class='sc-cPuPxo LiroG']"))
+				.getText());
+
+		assertEquals(ActualReturn, expectedReturnDate);
+		assertEquals(ActualDeparturedate, expectedDepartureDate);
+
+	}
+
 	@Test(priority = 7)
 	public void RandomMethodToChangeTheLanguage() {
 
@@ -93,6 +115,26 @@ public class MyTestCases extends Parameter {
 			String Actuallang = driver.findElement(By.tagName("html")).getAttribute("lang");
 
 			assertEquals(Actuallang, Expectedlang);
+		}
+
+	}
+
+	@Test(priority = 8)
+	public void SwitchToHotelTap() {
+		WebElement HotelTap = driver.findElement(By.id("uncontrolled-tab-example-tab-hotels"));
+		HotelTap.click();
+
+		if (driver.getCurrentUrl().contains("ar")) {
+
+			WebElement SearchCityInput = driver
+					.findElement(By.cssSelector("input[placeholder='البحث عن فنادق أو وجهات']"));
+			SearchCityInput.sendKeys(CitiesInArabic[RandomArabicCities]);
+
+		} else {
+
+			WebElement SearchCityInput = driver
+					.findElement(By.cssSelector("input[placeholder='Search for hotels or places']"));
+			SearchCityInput.sendKeys(CitiesInEnglish[RandomEnglishCities]);
 		}
 
 	}

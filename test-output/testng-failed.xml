@@ -6,8 +6,8 @@
       <class name="AlmosaferWeb.MyTestCases">
         <methods>
           <include name="myPostTest"/>
-          <include name="RandomMethodToChangeTheLanguage"/>
           <include name="mySetup"/>
+          <include name="SwitchToHotelTap"/>
         </methods>
       </class> <!-- AlmosaferWeb.MyTestCases -->
     </classes>
