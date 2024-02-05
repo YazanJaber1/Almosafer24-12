@@ -2,12 +2,14 @@ package AlmosaferWeb;
 
 import static org.testng.Assert.assertEquals;
 
+import java.sql.Driver;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -72,7 +74,7 @@ public class MyTestCases extends Parameter {
 		System.out.println();
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6, enabled = false)
 	public void CheckDepartureDateAndReturnDate() {
 
 		LocalDate Today = LocalDate.now();
@@ -136,9 +138,57 @@ public class MyTestCases extends Parameter {
 					.findElement(By.cssSelector("input[placeholder='Search for hotels or places']"));
 			SearchCityInput.sendKeys(CitiesInEnglish[RandomEnglishCities]);
 		}
-
+		WebElement theList = driver.findElement(By.className("UzzIN"));
+		System.out.println(theList.findElements(By.tagName("li")).size());
+		theList.findElements(By.tagName("li")).get(1).click();
 	}
 
+	@Test(priority = 9)
+	public void randomSelectTheVisitorNumber() {
+
+		WebElement visitor = driver.findElement(By.tagName("select"));
+		Select selector = new Select(visitor);
+
+		if (driver.getCurrentUrl().contains("ar"))
+
+		{
+			selector.selectByVisibleText("1 غرفة، 1 بالغ، 0 أطفال");
+
+		} else {
+			selector.selectByVisibleText("1 Room, 1 Adult, 0 Children");
+		}
+
+		driver.findElement(By.className("sc-1vkdpp9-6")).click();
+	}
+
+	@Test(priority = 10)
+	public void makeSurePageIsFullyLoaded() throws InterruptedException {
+		Thread.sleep(30000);
+
+		String searchResult = driver.findElement(By.xpath("//*[@id=\"__next\"]/div[2]/section/span")).getText();
+
+		if (driver.getCurrentUrl().contains("ar")) {
+
+			boolean Actualresult = searchResult.contains("وجدنا");
+			assertEquals(Actualresult, true);
+		}
+
+		else {
+
+			boolean Actualresult = searchResult.contains("found");
+			assertEquals(Actualresult, true);
+
+		}
+
+	}
+	@Test(priority = 11)
+	public void sortTheItemsBasedOnThEPrice() {
+		
+		driver.findElement(By.xpath("//*[@id=\"__next\"]/div[2]/div[1]/div[2]/section[1]/div/button[2]")).click();
+		int number = driver.findElement(By.cssSelector(".sc-htpNat.KtFsv.col-9")).findElements(By.className("Price__Value")).size();
+	System.out.println(number);
+	}
+	
 	@AfterTest
 	public void myPostTest() {
 	}

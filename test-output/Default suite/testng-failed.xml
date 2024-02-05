@@ -5,9 +5,9 @@
     <classes>
       <class name="AlmosaferWeb.MyTestCases">
         <methods>
+          <include name="makeSurePageIsFullyLoaded"/>
           <include name="myPostTest"/>
           <include name="mySetup"/>
-          <include name="SwitchToHotelTap"/>
         </methods>
       </class> <!-- AlmosaferWeb.MyTestCases -->
     </classes>
