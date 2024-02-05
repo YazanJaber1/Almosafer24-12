@@ -2,36 +2,36 @@
 <testng-results ignored="6" total="11" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-05T14:39:00 EET" name="Default suite" finished-at="2024-02-05T14:39:49 EET" duration-ms="49441">
+  <suite started-at="2024-02-05T16:36:15 EET" name="Default suite" finished-at="2024-02-05T16:37:13 EET" duration-ms="57456">
     <groups>
     </groups>
-    <test started-at="2024-02-05T14:39:00 EET" name="Default test" finished-at="2024-02-05T14:39:49 EET" duration-ms="49441">
+    <test started-at="2024-02-05T16:36:15 EET" name="Default test" finished-at="2024-02-05T16:37:13 EET" duration-ms="57456">
       <class name="AlmosaferWeb.MyTestCases">
-        <test-method is-config="true" signature="mySetup()[pri:0, instance:AlmosaferWeb.MyTestCases@40e10ff8]" started-at="2024-02-05T14:39:00 EET" name="mySetup" finished-at="2024-02-05T14:39:05 EET" duration-ms="5274" status="PASS">
+        <test-method is-config="true" signature="mySetup()[pri:0, instance:AlmosaferWeb.MyTestCases@275fe372]" started-at="2024-02-05T16:36:15 EET" name="mySetup" finished-at="2024-02-05T16:36:25 EET" duration-ms="10054" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mySetup -->
-        <test-method signature="RandomMethodToChangeTheLanguage()[pri:7, instance:AlmosaferWeb.MyTestCases@40e10ff8]" started-at="2024-02-05T14:39:05 EET" name="RandomMethodToChangeTheLanguage" finished-at="2024-02-05T14:39:08 EET" duration-ms="2419" status="PASS">
+        <test-method signature="RandomMethodToChangeTheLanguage()[pri:7, instance:AlmosaferWeb.MyTestCases@275fe372]" started-at="2024-02-05T16:36:25 EET" name="RandomMethodToChangeTheLanguage" finished-at="2024-02-05T16:36:29 EET" duration-ms="3400" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RandomMethodToChangeTheLanguage -->
-        <test-method signature="SwitchToHotelTap()[pri:8, instance:AlmosaferWeb.MyTestCases@40e10ff8]" started-at="2024-02-05T14:39:08 EET" name="SwitchToHotelTap" finished-at="2024-02-05T14:39:10 EET" duration-ms="2041" status="PASS">
+        <test-method signature="SwitchToHotelTap()[pri:8, instance:AlmosaferWeb.MyTestCases@275fe372]" started-at="2024-02-05T16:36:29 EET" name="SwitchToHotelTap" finished-at="2024-02-05T16:36:31 EET" duration-ms="2215" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SwitchToHotelTap -->
-        <test-method signature="randomSelectTheVisitorNumber()[pri:9, instance:AlmosaferWeb.MyTestCases@40e10ff8]" started-at="2024-02-05T14:39:10 EET" name="randomSelectTheVisitorNumber" finished-at="2024-02-05T14:39:17 EET" duration-ms="7423" status="PASS">
+        <test-method signature="randomSelectTheVisitorNumber()[pri:9, instance:AlmosaferWeb.MyTestCases@275fe372]" started-at="2024-02-05T16:36:31 EET" name="randomSelectTheVisitorNumber" finished-at="2024-02-05T16:36:40 EET" duration-ms="9512" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- randomSelectTheVisitorNumber -->
-        <test-method signature="makeSurePageIsFullyLoaded()[pri:10, instance:AlmosaferWeb.MyTestCases@40e10ff8]" started-at="2024-02-05T14:39:17 EET" name="makeSurePageIsFullyLoaded" finished-at="2024-02-05T14:39:47 EET" duration-ms="30072" status="PASS">
+        <test-method signature="makeSurePageIsFullyLoaded()[pri:10, instance:AlmosaferWeb.MyTestCases@275fe372]" started-at="2024-02-05T16:36:40 EET" name="makeSurePageIsFullyLoaded" finished-at="2024-02-05T16:37:11 EET" duration-ms="30078" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- makeSurePageIsFullyLoaded -->
-        <test-method signature="sortTheItemsBasedOnThEPrice()[pri:11, instance:AlmosaferWeb.MyTestCases@40e10ff8]" started-at="2024-02-05T14:39:47 EET" name="sortTheItemsBasedOnThEPrice" finished-at="2024-02-05T14:39:49 EET" duration-ms="2095" status="PASS">
+        <test-method signature="sortTheItemsBasedOnThEPrice()[pri:11, instance:AlmosaferWeb.MyTestCases@275fe372]" started-at="2024-02-05T16:37:11 EET" name="sortTheItemsBasedOnThEPrice" finished-at="2024-02-05T16:37:13 EET" duration-ms="1950" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sortTheItemsBasedOnThEPrice -->
-        <test-method is-config="true" signature="myPostTest()[pri:0, instance:AlmosaferWeb.MyTestCases@40e10ff8]" started-at="2024-02-05T14:39:49 EET" name="myPostTest" finished-at="2024-02-05T14:39:49 EET" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="myPostTest()[pri:0, instance:AlmosaferWeb.MyTestCases@275fe372]" started-at="2024-02-05T16:37:13 EET" name="myPostTest" finished-at="2024-02-05T16:37:13 EET" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- myPostTest -->

@@ -2,17 +2,20 @@ package AlmosaferWeb;
 
 import static org.testng.Assert.assertEquals;
 
-import java.sql.Driver;
+
 import java.time.Duration;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 
 public class MyTestCases extends Parameter {
 
@@ -141,6 +144,11 @@ public class MyTestCases extends Parameter {
 		WebElement theList = driver.findElement(By.className("UzzIN"));
 		System.out.println(theList.findElements(By.tagName("li")).size());
 		theList.findElements(By.tagName("li")).get(1).click();
+		
+		// hard assert/comment
+		
+		// if this test case failed i will not go to the following test cases/comment
+//Assert.assertEquals(false,true);
 	}
 
 	@Test(priority = 9)
@@ -184,9 +192,24 @@ public class MyTestCases extends Parameter {
 	@Test(priority = 11)
 	public void sortTheItemsBasedOnThEPrice() {
 		
-		driver.findElement(By.xpath("//*[@id=\"__next\"]/div[2]/div[1]/div[2]/section[1]/div/button[2]")).click();
-		int number = driver.findElement(By.cssSelector(".sc-htpNat.KtFsv.col-9")).findElements(By.className("Price__Value")).size();
-	System.out.println(number);
+	WebElement LowestPriceButton =	driver.findElement(By.xpath("//*[@id=\"__next\"]/div[2]/div[1]/div[2]/section[1]/div/button[2]"));
+	LowestPriceButton.click();
+	
+	WebElement HotelsContainer = driver.findElement(By.cssSelector(".sc-htpNat.KtFsv.col-9"));
+	List<WebElement> thePricesList = HotelsContainer.findElements(By.className("Price__Value"));
+	
+	System.out.println(thePricesList.size()+" this is the total prices found");
+	
+	String LowestPriceOnTheList = thePricesList.get(0).getText();
+	int LowestPriceOnTheListAsNumber = Integer.parseInt(LowestPriceOnTheList);
+	
+	String highestPriceOnTheList = thePricesList.get(thePricesList.size()-1).getText();
+	int highestPriceOnTheListAsNumber = Integer.parseInt(highestPriceOnTheList);
+	
+	System.out.println("this is the minimum vale "+LowestPriceOnTheList);
+	System.out.println("this is the maximum vale "+highestPriceOnTheList);
+	
+	assertEquals(highestPriceOnTheListAsNumber>LowestPriceOnTheListAsNumber, true);
 	}
 	
 	@AfterTest

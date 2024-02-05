@@ -8,6 +8,8 @@
           <include name="makeSurePageIsFullyLoaded"/>
           <include name="myPostTest"/>
           <include name="mySetup"/>
+          <include name="SwitchToHotelTap"/>
+          <include name="randomSelectTheVisitorNumber"/>
         </methods>
       </class> <!-- AlmosaferWeb.MyTestCases -->
     </classes>
